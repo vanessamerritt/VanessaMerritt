@@ -1,0 +1,395 @@
+/*
+	Theme Name: Vanessa Merritt
+	Theme URI: vanessamerritt.com
+	Description: Vanessa Merritt WordPress Theme
+	Version: 1.4.3
+	Author: Vanessa Merritt (@vanessamerritt_)
+	Author URI: vanessamerritt.com
+	Tags: HTML5, CSS3
+
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
+	*/
+
+//COLOURS
+
+
+$pink: #D989BB;
+$white: #fff;
+$black: #252122;
+$grey: #C9CCD1;
+
+
+//GLOBAL
+@import "normalize";
+@import "box";
+@import "clearfix";
+
+body {
+	margin:0;
+	font-family:  'Open Sans Condensed', sans-serif;
+	font-weight: 100;
+	color: $black;
+	font-size: 18px;
+}
+.wrapper{
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+h2, h3, h4, h5, h6{
+	padding: 10px 0 10px 0;
+}
+
+h1{
+	font-family: "Andale Mono", AndaleMono, monospace;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	text-align: center;
+	padding: 2% 0 2% 0;
+	line-height: 50px;
+}
+
+li{
+	font-family: "Andale Mono", AndaleMono, monospace;
+}
+
+a{
+	text-decoration: none;
+		color: $black;
+	-webkit-transition: .5s;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+//CONTACT FORM
+
+.conact{
+	float: right;
+	margin-right: 10%;
+}
+
+textarea, input{
+	padding: 10px 0 10px 0;
+	border: 1px solid $black;
+	width: 100%;
+	font-family: "Andale Mono", AndaleMono, monospace;
+}
+
+textarea:hover, input:hover{
+		border: 2px solid $black;
+
+	}
+textarea:focus, input:focus{
+		box-shadow: 0 0 8px $pink;
+		outline: none;
+	}
+
+//HEADER
+.header{
+	max-width: 100%;
+	background: $black;
+	padding: 10px;
+	margin-top: 0;
+	position: relative;
+}
+.logo-img{
+	width: 20%;
+	padding: 0 0 0 2%;
+}
+.header-widgets{
+	position: absolute;
+	top: 0; 
+	right: 0;
+	padding: 2% 2% 2% 2%;
+}
+
+//NAV
+
+.nav ul{
+	list-style-type: none;
+	text-align: right;
+	margin: 0;
+	padding-bottom: 10px;
+
+		li{
+			display: inline;
+
+			a{
+				text-decoration: none;
+				color: $white;
+				text-transform: uppercase;
+				padding: 2%;
+				-webkit-transition: .5s;
+			}
+			a:hover{
+				color:$pink;
+			}
+			a.current-menu-item{
+    			background: $pink;
+    			color: $black;
+}
+		}
+
+}
+
+//HOME
+.tagline{
+	margin-bottom: 0px;
+	font-size:35px;
+}
+.tagline, .blog-query, .home-intro{
+	max-width: 62%;
+	float: right;
+	padding: 2%;
+	margin-right: 5%;
+	text-align: left;
+
+}
+.blog-query{
+	padding: 0 2% 2% 2%;
+	margin: 0 5%;
+}
+
+.home-intro{
+	font-size: 35px;
+	margin-top: 0px;
+	letter-spacing: 2px;
+	line-height: 50px;
+
+	span{
+		color: $pink;
+	}
+}
+
+//SIDEBAR
+
+.sidebar-widget{
+	max-width: 30%;
+	float: left;
+	padding: 2%;
+	margin: 3% 0 5% 0;
+	background: $grey;
+	text-align: center;
+}
+.sidebar-wrap{
+	border: 1px solid $black;
+}
+.sidebar-widget p, .sidebar-widget h3{
+	color: $black;
+	padding: 10px 10px 0 10px;
+}
+img.widget{
+	max-width: 80%;
+	border: 1px solid $black;
+	border-radius: 50%;
+}
+img.sidebar{
+	width: 40px;
+	margin: 5px;
+	border-radius: 50%;
+	-webkit-transition: 1s;
+}
+img.sidebar:hover{
+	background: $pink;
+}
+
+//POSTS
+article, .archive-single{
+	margin-left: 2%;
+}
+
+.pagination{
+	padding: 2%;
+}
+.post-title{
+	margin-bottom: 0;
+}
+.post-info{
+	text-align: center;
+}
+
+//PORTFOLIO
+
+.container{
+	position: relative;
+	width: 33%;
+	height: 200px;
+	overflow: hidden;
+	padding: 2%;
+	float: left;
+
+	.img-container{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 1;
+		background-repeat: no-repeat;
+		// background-size: cover;
+		
+	}
+	.text-container{
+		// display: none;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left:-200px;
+		z-index: 2;
+		color: white;
+		background: rgba(0,0,0,1);
+		width: 100%;
+		height: 100%;
+		transition: all 0.5s;
+
+		h2, h3, p, a{
+			padding: 0 0 0 15px;
+			font-size: 20px;
+			color: white;
+		}
+		p{
+			font-size: 16px;
+		}
+
+	}
+}
+
+.container:hover{
+	.text-container{
+		opacity: .8;
+		left: 0;
+	}
+}
+
+.portfolio-image{
+	padding: 2%;
+	width: 100%;
+}
+
+.single-portfolio-image{
+	width: 100%;
+}
+
+.full-portfolio{
+	width: 80%;
+	padding-left: 20%;
+}
+
+//ABOUT
+img.about{
+	border-radius: 50%;
+	width: 33%;
+	float: left;
+	margin-bottom: 12%;
+}
+
+p.about{
+	max-width: 60%;
+	float: right;
+
+	a{
+		color: $pink;
+	}
+}
+
+
+//FOOTER
+footer{
+	background: $black;
+	color: $white;
+	text-align: center;
+	max-width: 100%;
+	clear: both;
+	padding:2% 0 2% 0;
+	margin-top: 12%;
+}
+
+.footer img{
+	width: 40px;
+	margin: 5px;
+	border-radius: 50%;
+	-webkit-transition: 1s;
+}
+.footer img:hover{
+	background: $pink;
+}
+
+.footer a{
+	color: $white;
+}
+
+.footer-widget{
+	max-width: 100%;
+
+}
+
+//404
+.page-404{
+	text-align: center;
+}
+
+//RESPONSIVE
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+	body {
+		//background: cyan;
+	}
+	.container{
+	width: 50%;
+}
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	body {
+		//background: white;
+	}
+img.sidebar{
+	margin: 12px;
+}
+.contact-sidebar{
+	display: none;
+}
+.container{
+	float: none;
+	width: 80%;
+	margin-left: 10%;
+	}
+.tagline, .home-intro{
+   	font-size: 25px;
+   }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	body {
+		//background: moccasin;
+	}
+   .nav a{
+   	font-size: 25px;
+   	display: block;
+   	text-align: center;
+   }
+   .logo-img{
+   	width: 50%;
+   	margin-left: 30%;
+   }
+
+   .sidebar-widget, .tagline, .blog-query, .home-intro{
+   	float: none;
+   	max-width: 80%;
+   	margin-left: 10%;
+   }
+
+   .tagline, .home-intro{
+   	font-size: 20px;
+   }
+.header-widgets{
+	display: none;
+}
+   
+
+}
